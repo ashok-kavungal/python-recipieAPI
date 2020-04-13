@@ -16,7 +16,7 @@ class ModelTests(TestCase):
         self.assertTrue(user.check_password(password))
 
     def test_super_user_created(self):
-        '''check the super user created is staff and have super user permisssions'''
+        '''check created user is staff with superuser permissions'''
         email = 'ashok@example.com'
         password = '123Ashok'
         user = get_user_model().objects.create_superuser(
