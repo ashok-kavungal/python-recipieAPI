@@ -1,12 +1,11 @@
-from django import TestCase, Client
+from django.test import TestCase, Client
 from django.contrib.auth import get_user_model
 from django.urls import reverse
 
 
 class AdminTest(TestCase):
-
-    def setupForTest(self):
-        '''setting up test user and test super'''
+    def setUp(self):
+        ''''setting up test user and test super'''
         self.client = Client()
         self.admin_user = get_user_model().objects.create_superuser(
             email='anu@gmail.com',
@@ -19,7 +18,7 @@ class AdminTest(TestCase):
             name='hisnameismathew'
         )
 
-    def tes_for_isUserListed(self):
+    def test_for_isUserListed(self):
         '''checking whether the user is listed in userlist'''
         url = reverse('admin:core_user_changelist')
         res = self.client.get(url)
