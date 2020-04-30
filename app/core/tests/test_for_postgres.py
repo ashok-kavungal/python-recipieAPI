@@ -13,7 +13,7 @@ class CommandsTestCase(TestCase):
 
         with patch('django.db.utils.ConnectionHandler.__getitem__') as gi:
             gi.return_value = True ##sets the connectionn handlerr return value to succesful
-            call_command('wait_for_db')
+            call_command('wait_for_postgres')#custom command added in core
             self.assertEqual(gi.call_count, 1)
 
     @patch('time.sleep', return_value=None)
@@ -22,5 +22,5 @@ class CommandsTestCase(TestCase):
 
         with patch('django.db.utils.ConnectionHandler.__getitem__') as gi:
             gi.side_effect = [OperationalError] * 5 + [True] ##returns error for first 5 times
-            call_command('wait_for_db')
+            call_command('wait_for_postgres')
             self.assertEqual(gi.call_count, 6)
