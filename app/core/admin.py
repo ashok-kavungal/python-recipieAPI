@@ -4,6 +4,10 @@ from django.utils.translation import gettext as _ #translate python to string
 
 from core import models
 
+def dummy_user(email='test@gmail.com', password='12345'):
+    """a  dummy user for test"""
+    return get_user_model().objects.create_user(email, password)
+
 class UserAdmin(BaseUserAdmin):
     ''' modify the default admin to list custom user model'''
     ordering = ['id']
@@ -34,4 +38,27 @@ class UserAdmin(BaseUserAdmin):
     }),
     )
 
-admin.site.register(models.User,UserAdmin)     
+admin.site.register(models.User,UserAdmin)
+admin.site.register(models.Tag)     
+
+
+
+
+
+
+...
+
+def sample_user(email='test@londonappdev.com', password='testpass'):
+    """Create a sample user"""
+    return get_user_model().objects.create_user(email, password)
+
+...
+
+def test_tag_str(self):
+    """Test the tag string representation"""
+    tag = models.Tag.objects.create(
+        user=sample_user(),
+        name='Vegan'
+    )
+
+    self.assertEqual(str(tag), tag.name)
