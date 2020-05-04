@@ -1,12 +1,14 @@
+import uuid
+import os
+
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, \
                                          PermissionsMixin
 from django.conf import settings
 
-import uuid
-import os
 
 def recipe_image_path(instance, filename):
+    
     """generates path for each recipe image"""
     ext = filename.split('.')[-1]
     filename = f'{uuid.uuid4()}.{ext}'
