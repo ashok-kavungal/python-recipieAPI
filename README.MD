@@ -1,9 +1,24 @@
 
-## Buildinng and Running in system
+# Reipie API
 
-> clone the repository 
-> Make sure docker and docker-compose is installed.
-> to start the  server us "docker-compose up"
+An django rest api allowing users to create list of recipies, ingredients , tags and upload image of recipies. The api end points allow user to filter their recipies based on tags and ingredients seperately.
+
+For running unit test travis-ci is used.
+
+
+
+## Setup
+
+```sh
+# Dependencies to install
+Docker
+Docker-compose
+python
+
+# Run the container
+docker-compose up
+```
+## Screenshots 
 
 ![Screen shots of build](./screenshots/1.png?raw=true "Result")
 ![Screen shots of build](./screenshots/2.png?raw=true "Result")
