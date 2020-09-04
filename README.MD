@@ -1,23 +1,33 @@
 
-# Reipie API
-
-An django rest api allowing users to create list of recipies, ingredients , tags and upload image of recipies. The api end points allow user to filter their recipies based on tags and ingredients seperately.
-
-For running unit test travis-ci is used.
+# A Django project for a RESTful Application using Docker
 
 
+Description
+=======
 
-## Setup
+The application is a simple RESTful app that allows users to create list of recipies, ingredients , tags recipes, tag ingredients and upload image of recipies. The api end points allow user to filter their recipies based on tags and ingredients seperately.It is a simple [Django](https://www.djangoproject.com/) project that uses [Django REST framework](http://www.django-rest-framework.org/). The template makes use of Docker to create containers for developmet.
 
-```sh
-# Dependencies to install
-Docker
-Docker-compose
-python
+It uses python3, Django 3, Docker and travis CI for automated tests
 
-# Run the container
-docker-compose up
+## Usage
+
+Download the repository:
 ```
+$ git clone https://github.com/ashok-kavungal/python-recipieAPI.git
+```
+
+Init project:
+```
+$ cd python-recipieAPI
+$ docker-compose build
+```
+Launch:
+```
+$ docker-compose up
+```
+
+*Now your django app is available on port 8000 of any ip address of your machine, but it's optional for development*
+
 ## Screenshots 
 
 ![Screen shots of build](./screenshots/1.png?raw=true "Result")
